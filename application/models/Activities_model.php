@@ -15,4 +15,15 @@ class Activities_model extends CI_Model {
         // return $result->row(); //one data use with where
         return $result->result(); //many data
     }
+
+    public function insert($data){
+        $result = $this->db->insert('tbl_activities', $data);
+        return $result;
+    }
+
+    public function update($data){
+        $this->db->where('activty_id', $data['activity_id']);
+        $result = $this->db->update('tbl_activities', $data);
+        return $result;
+    }
 }

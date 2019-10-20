@@ -39,18 +39,41 @@ class Activity extends CI_Controller {
 		$this->form_validation->set_rules('activity_name', 'activity_name', 'required', 
 											array('required'=> 'กรุณากรอกชื่อกิจกรรม'));
 
-		// $activity_id = $this->input->post('activity_id');
-		// $activity_name = $this->input->post('activity_name');
-		// $start_date = $this->input->post('start_date');
-		// $end_date = $this->input->post('end_date');
+		
 
 		if ($this->form_validation->run() == FALSE)
 		{
+			if(empty($activity_id)){
 				$this->insert();
-		}
-		else
-		{
-				$this->load->view('formsuccess');
+			} else{
+				$this->update();
+			}
+				
+		} else{
+			$activity_id = $this->input->post('activity_id');
+			$activity_name = $this->input->post('activity_name');
+			$start_date = $this->input->post('start_date');
+			$end_date = $this->input->post('end_date');
+
+			$data = array(
+				'activity_id' => $activity_id,
+				'activity_name' => $activity_name,
+				'start_date' => $start_date,
+				'end_date' => $end_date,
+			);
+
+			$result = false;
+			if(empty($activity_id)){
+				$result = $this->activities_model->insert($data);
+			}else{
+				$result = $this->activities_model->update($data);
+			}
+
+			if($result){
+				redirect('activity');
+			}else{
+
+			}
 		}
 	}
 
