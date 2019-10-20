@@ -34,8 +34,11 @@
               <th scope="row"><?php echo $index+1 ?></th>
               <td><?php echo $obj->activity_name; ?></td>
               <td><?php echo change_date_format($obj->start_date).' - '.change_date_format($obj->end_date) ?></td>
-              <td><a href="<?php echo base_url('activity/update'); ?>" type="button" class="btn btn-warning">แก้ไข</a>
-                <a href="<?php echo base_url('activity/delete'); ?>" type="button" class="btn btn-danger">ลบ</a></td>
+              <td><a href="<?php echo base_url('activity/update/'.$obj->activity_id); ?>" 
+                      type="button" class="btn btn-warning">แก้ไข</a>
+                <a href="<?php echo base_url('activity/delete/'.$obj->activity_id); ?>" 
+                      class="btn btn-danger"
+                      onclick="return confirm('Are you sure?');"> ลบ </a></td>
             </tr>
 
           <?php } ?>

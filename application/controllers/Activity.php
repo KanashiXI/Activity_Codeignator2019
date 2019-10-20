@@ -77,19 +77,27 @@ class Activity extends CI_Controller {
 		}
 	}
 
-	function update(){
+	function update($activity_id){
+
+		$activity_data = $this->activities_model->get($activity_id);
+		$data['activity_data'] = $activity_data;
+
 		$this->load->view('layout/head');
 		$this->load->view('layout/menu');
-		$this->load->view('activity/update/content');
+		$this->load->view('activity/update/content', $data);
 		$this->load->view('layout/footer');
 		$this->load->view('layout/foot');
 	}
 
-	function delete(){
-		$this->load->view('layout/head');
-		$this->load->view('layout/menu');
-		$this->load->view('activity/delete/content');
-		$this->load->view('layout/footer');
-		$this->load->view('layout/foot');
+	function delete($activity_id){
+
+		$result = $this->activities_model->delete($activity_id);
+
+		if($result){
+			redirect('activity');
+		}else{
+
+		}
+
 	}
 }
