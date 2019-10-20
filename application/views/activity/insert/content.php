@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-12">
                     <button class="btn btn-success" type="button">บันทึก</button>
-                    <a href="<?php echo base_url('index.php/activity/'); ?>" class="btn btn-outline-secondary" type="button">ยกเลิก</a>
+                    <a href="<?php echo base_url('activity/'); ?>" class="btn btn-outline-secondary" type="button">ยกเลิก</a>
                     </div>
                 </div>    
             </form>

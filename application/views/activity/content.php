@@ -7,7 +7,7 @@
         <input type="text" class="form-control" placeholder="ชื่อกิจกรรม" aria-label="Recipient's username" aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button">ค้นหา</button>
-          <a href="<?php echo base_url('index.php/activity/insert'); ?>" class="btn btn-info" type="button">เพิ่มกิจกรรม</a>
+          <a href="<?php echo base_url('activity/insert'); ?>" class="btn btn-info" type="button">เพิ่มกิจกรรม</a>
         </div>
       </div>
     </div>
@@ -29,8 +29,8 @@
             <th scope="row">1</th>
             <td>กิจกรรมค่าย 4 ชั้นปี</td>
             <td>12 เม.ย. - 15 เม.ย. 2563</td>
-            <td><a href="<?php echo base_url('index.php/activity/update'); ?>" type="button" class="btn btn-warning">แก้ไข</a>
-              <a href="<?php echo base_url('index.php/activity/delete'); ?>" type="button" class="btn btn-danger">ลบ</a></td>
+            <td><a href="<?php echo base_url('activity/update'); ?>" type="button" class="btn btn-warning">แก้ไข</a>
+              <a href="<?php echo base_url('activity/delete'); ?>" type="button" class="btn btn-danger">ลบ</a></td>
           </tr>
         </tbody>
       </table>
